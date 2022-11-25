@@ -37,53 +37,53 @@
     <main class="page__main">
       <section class="intro">
         <h2 class="visually-hidden">Приветствие.</h2>
-        <img src="" width="282" height="214" alt="красивый текст «Welcome to the gorgeous SEDONA Because the Grand Canyon sucks».">
+        <img src="" width="282" height="214" alt="Красивый текст «Welcome to the gorgeous SEDONA Because the Grand Canyon sucks».">
       </section>
       <section class="advantages">
         <h2 class="advantages__title subheading">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
         <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд-Каньон!</p>
-        <ol class="advantages__list">
-          <li class="advantages__item advantages__list">
-            <div class="advantages__item content-tile">
+        <ol class="content-columns">
+          <li class="content-columns__item content-columns">
+            <div class="content-columns__item content-tile">
               <h3 class="content-tile__title subheading">Настоящий городок</h3>
               <p class="content-tile__order">— №1 —</p>
               <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
             </div>
-            <img class="advantages__item advantages__picture" src="" width="520" height="260" alt="небольшой участок городка Седона.">
-            <ul class="advantages__item advantages__list">
-              <li class="advantages__item content-tile">
+            <img class="content-columns__item advantages__picture" src="" width="520" height="260" alt="Небольшой участок городка Седона.">
+            <ul class="content-columns__item content-columns">
+              <li class="content-columns__item content-tile">
                 <h4 class="content-tile__title subheading">Жильё</h4>
                 <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
               </li>
-              <li class="advantages__item content-tile">
+              <li class="content-columns__item content-tile">
                 <h4 class="content-tile__title subheading">Еда</h4>
                 <p>Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь!</p>
               </li>
-              <li class="advantages__item content-tile">
+              <li class="content-columns__item content-tile">
                 <h4 class="content-tile__title subheading">Сувениры</h4>
                 <p>Не только китайского, но и настоящего местного производства!</p>
               </li>
             </ul>
           </li>
-          <li class="advantages__item advantages__list">
-            <div class="advantages__item content-tile">
+          <li class="content-columns__item content-columns">
+            <div class="content-columns__item content-tile">
               <h3 class="content-tile__title subheading">Там есть мост дьявола</h3>
               <p class="content-tile__order">— №2 —</p>
               <p>Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
             </div>
-            <img class="advantages__item advantages__picture" src="images/canyon-bridge.jpg" width="520" height="260" alt="мост дьявола.">
+            <img class="content-columns__item advantages__picture" src="images/canyon-bridge.jpg" width="520" height="260" alt="Мост дьявола.">
           </li>
-          <li class="advantages__item content-tile">
+          <li class="content-columns__item content-tile">
             <h3 class="content-tile__title subheading">Небольшая площадь</h3>
             <p class="content-tile__order">— №3 —</p>
             <p>Все достопримечательности находятся очень близко</p>
           </li>
-          <li class="advantages__item content-tile">
+          <li class="content-columns__item content-tile">
             <h3 class="content-tile__title subheading">Красивая дорога</h3>
             <p class="content-tile__order">— №4 —</p>
             <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
           </li>
-          <li class="advantages__item content-tile">
+          <li class="content-columns__item content-tile">
             <h3 class="content-tile__title subheading">Мало туристов</h3>
             <p class="content-tile__order">— №5 —</p>
             <p>Большинство едет в Гранд Каньон и толпится там</p>
@@ -92,15 +92,39 @@
       </section>
       <section class="search-hotel">
         <h2 class="heading">Заинтересовались?</h2>
-
+        <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        <a class="button" href="#">Найти Гостиницу</a>
       </section>
       <section class="location">
-        <h2 class="visually-hidden">Местоположение на карте</h2>
-
+        <h2 class="visually-hidden">Местоположение на карте.</h2>
+        <img width="320" height="350" src="" alt="Карта с местоположением Седоны.">
       </section>
     </main>
-    <footer class="page__footer">
-
+    <footer class="page__footer content-columns">
+      <p class="content-columns__item footer__title">#visitsedona</p>
+      <ul class="content-columns__item social-list">
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://vk.com/htmlacademy">
+            <span class="visually-hidden">Перейти во вконтакте.</span>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://t.me/htmlacademy">
+            <span class="visually-hidden">Перейти в телеграм.</span>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://www.youtube.com/user/htmlacademyru">
+            <span class="visually-hidden">Перейти в ютюб.</span>
+          </a>
+        </li>
+      </ul>
+      <p class="content-columns__item copyrights">
+        <span>Разработано</span>
+        <a class="copyrights__link" href="https://htmlacademy.ru/intensive/adaptive">
+          <span class="visually-hidden">htmlacademy.</span>
+        </a>
+      </p>
     </footer>
   </body>
 </html>
