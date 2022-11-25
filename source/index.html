@@ -8,7 +8,29 @@
   </head>
   <body class="page">
     <header class="page__header">
-      <nav class="page__nav">
+      <nav class="page__nav dropdown-menu">
+        <button class="dropdown-menu__button button-menu" type="button">
+          <span class="visually-hidden">Кнопка открытия меню.</span>
+        </button>
+        <ul class="dropdown-menu__menu site-menu">
+          <li class="site-menu__item">
+            <a class="site-menu__link">Главная</a>
+          </li>
+          <li class="site-menu__item">
+            <a href="catalog.html" class="site-menu__link">Фото и видео</a>
+          </li>
+          <li class="site-menu__item site-menu__item--logo">
+            <a class="site-menu__link">
+              <img width="185px" height="96px" src="" alt="Логотип сайта.">
+            </a>
+          </li>
+          <li class="site-menu__item">
+            <a href="form.html" class="site-menu__link">Форма Отзыва</a>
+          </li>
+          <li class="site-menu__item">
+            <a href="https://htmlacademy.ru/intensive/adaptive" class="site-menu__link">HTML ACADEMY</a>
+          </li>
+        </ul>
       </nav>
     </header>
     <main class="page__main">
