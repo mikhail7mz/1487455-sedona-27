@@ -1,1 +1,26 @@
-// Начните писать стили здесь
+@use "blocks/advantages.scss";
+@use "blocks/button.scss";
+@use "blocks/copyrights.scss";
+@use "blocks/footer.scss";
+@use "blocks/form.scss";
+@use "blocks/gallery.scss";
+@use "blocks/header.scss";
+@use "blocks/heading.scss";
+@use "blocks/intro.scss";
+@use "blocks/location.scss";
+@use "blocks/page.scss";
+@use "blocks/photo-and-video.scss";
+@use "blocks/search-hotel.scss";
+@use "blocks/subheading.scss";
+@use "blocks/video-presentation.scss";
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
