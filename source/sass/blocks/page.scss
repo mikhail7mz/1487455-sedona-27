@@ -7,6 +7,8 @@
   margin: 0;
   display: flex;
   flex-direction: column;
+  font: 400 14px/21px var(--font-base);
+  color: var(--font-color-base);
 }
 
 .page__main {

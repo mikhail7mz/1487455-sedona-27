@@ -8,19 +8,27 @@
 @use "blocks/heading.scss";
 @use "blocks/intro.scss";
 @use "blocks/location.scss";
+@use "blocks/modal.scss";
 @use "blocks/page.scss";
 @use "blocks/photo-and-video.scss";
 @use "blocks/search-hotel.scss";
 @use "blocks/subheading.scss";
 @use "blocks/video-presentation.scss";
+@use "blocks/visually-hidden.scss";
+@use "blocks/variables.scss";
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ptsans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/ptsansbold.woff2") format("woff2");
+  font-display: swap;
 }
