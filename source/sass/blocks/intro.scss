@@ -27,6 +27,18 @@
   }
 }
 
+.intro--small {
+  padding: 52px 0 67px;
+
+  @media (min-width: $tablet-width) {
+    padding: 95px 0 117px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 101px 0 120px;
+  }
+}
+
 .intro__image {
   display: block;
   margin: 0 auto;
@@ -35,5 +47,17 @@
 
   @media (min-width: $tablet-width) {
     width: 461px;
+  }
+}
+
+.intro--small .intro__image {
+  width: 229px;
+
+  @media (min-width: $tablet-width) {
+    width: 457px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 460px;
   }
 }
