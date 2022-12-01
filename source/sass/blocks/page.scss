@@ -1,4 +1,4 @@
-@use "../global/variables" as var;
+@use "../global/variables" as *;
 
 .page {
   height: 100%;
@@ -9,12 +9,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  font: 400 14px/21px var.$font-primary;
+  font: 400 14px/21px $font-primary;
   color: var(--font-color-base);
   background-color: #ffffff;
 
-  @media (min-width: var.$desktop-width) {
-    max-width: var.$desktop-width;
+  @media (min-width: $desktop-width) {
+    max-width: $desktop-width;
     margin: 0 auto;
   }
 }
