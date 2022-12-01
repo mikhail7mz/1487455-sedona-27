@@ -28,7 +28,8 @@
                       transparent calc(50% + 2px)
                     );
 
-  &::before, &::after {
+  &::before,
+  &::after {
     position: absolute;
     right: 0;
     display: block;
@@ -68,7 +69,8 @@
 .navigation__button--close {
   background: none;
 
-  &::before, &::after {
+  &::before,
+  &::after {
     top: 50%;
     width: 28px;
     background: $background-primary;
@@ -143,9 +145,9 @@
   text-transform: uppercase;
   text-decoration: none;
   background-color: $background-secondary;
-  box-shadow: 0px 1px 0px fade-out($color-primary-dark, 0.8),
-              0px 1px 0px $background-secondary,
-              inset 0px 1px 0px fade-out($color-secondary, 0.8);
+  box-shadow: 0 1px 0 fade-out($color-primary-dark, 0.8),
+    0 1px 0 $background-secondary,
+    inset 0 1px 0 fade-out($color-secondary, 0.8);
 
   &:focus {
     outline: none;
@@ -213,8 +215,8 @@
 
 .navigation__item:first-child .navigation__link {
   @media (max-width: calc($tablet-width - 1px)) {
-    box-shadow: 0px 1px 0px rgba(1, 1, 1, 0.2),
-                0px 1px 0px $background-secondary,
+    box-shadow: 0 1px 0 rgba(1, 1, 1, 0.2),
+      0 1px 0 $background-secondary;
   }
 }
 
@@ -228,7 +230,7 @@
                         180deg,
                         fade-out($color-primary-dark, 1) 0%,
                         fade-out($color-primary-dark, 0.8) 100%);
-    box-shadow: inset 0px 1px 0px fade-out($color-secondary, 0.8);
+    box-shadow: inset 0 1px 0 fade-out($color-secondary, 0.8);
   }
 }
 
