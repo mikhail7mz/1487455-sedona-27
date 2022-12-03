@@ -6,20 +6,19 @@
   background-repeat: no-repeat;
   background-size: 901px 389px;
   background-position: center bottom;
-  background-image: url("../../img/intro-background.jpg");
+  background-image: url("../img/intro-background.jpg");
   padding: 90px 0 85px;
-  overflow: hidden;
-
-  &::after {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 1200px;
-    height: 57px;
-    background-image: url("../../img/intro-footer.svg");
-    transform: translateX(-50%);
-    content: "";
-  }
+  clip-path: polygon(
+    calc(50% + 600px) 0,
+    calc(50% + 600px) calc(100% - 57px),
+    calc(50% + 350.4px) calc(100% - 23.7px),
+    calc(50% + 350.4px) calc(100% - 57px),
+    50% 100%,
+    calc(50% - 350.4px) calc(100% - 57px),
+    calc(50% - 350.4px) calc(100% - 23.7px),
+    calc(50% - 600px) calc(100% - 57px),
+    calc(50% - 600px) 0
+  );
 
   @media (min-width: $tablet-width) {
     padding: 77px 0 91px;

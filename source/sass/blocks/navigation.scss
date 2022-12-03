@@ -194,6 +194,12 @@
   color: $background-secondary;
   background: none;
   box-shadow: none;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    55% 100%,
+    45% 100%
+  );
 }
 
 .navigation__link--logo:focus {
