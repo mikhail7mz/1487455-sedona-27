@@ -1,0 +1,32 @@
+@use "../global/variables.scss" as *;
+
+.social {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.social__link {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-color: $background-secondary;
+
+  &:focus {
+    outline: none;
+    background-color: $background-secondary-hover;
+  }
+
+  &:hover {
+    background-color: $background-secondary-hover;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: fade-out($color-secondary, 0.7);
+    background-color: $background-secondary-active;
+  }
+}

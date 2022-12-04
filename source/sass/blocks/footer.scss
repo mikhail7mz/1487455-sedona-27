@@ -1,3 +1,28 @@
-.test {
-  background: none;
+@use "../global/variables.scss" as *;
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  row-gap: 40px;
+  padding: 28.5px $padding-side 22.9px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 36px;
+}
+}
+
+.footer__title {
+  margin: 0;
+  margin-bottom: -6.5px;
+  font: 700 21px/26px $font-primary;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-primary-dark;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
 }

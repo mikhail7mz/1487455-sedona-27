@@ -1,3 +1,29 @@
-.test {
-  background: none;
+@use "../global/variables.scss" as *;
+
+.copyrights {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: $color-primary-dark;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: none;
+    color: $background-secondary;
+  }
+
+  &:hover {
+    color: $background-secondary;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: fade-out($color-primary-dark, 0.7);
+  }
+}
+
+.copyrights__icon {
+  display: block;
 }
