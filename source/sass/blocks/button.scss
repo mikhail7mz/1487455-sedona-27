@@ -1,0 +1,26 @@
+@use "../global/variables.scss" as *;
+
+.button {
+  display: block;
+  font: 400 21px/26px $font-primary;
+  color: $color-secondary;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: $background-secondary;
+
+  &:focus {
+    outline: none;
+    background-color: $background-secondary-hover;
+  }
+
+  &:hover {
+    background-color: $background-secondary-hover;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: fade-out($color-secondary, 0.7);
+    background-color: $background-secondary-active;
+  }
+}

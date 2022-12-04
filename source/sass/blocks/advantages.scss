@@ -1,0 +1,108 @@
+@use "../global/variables.scss" as *;
+
+.advantages {
+  padding-top: 32px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.advantages__title {
+  margin-bottom: 35px;
+  padding: 0 $padding-side;
+}
+
+.advantages__text {
+  padding: 0 $padding-side;
+  margin: 16px 0;
+}
+
+.advantages__list,
+.advantages__item--wide,
+.advantages__sublist {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style-type: none;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: span 3;
+  }
+}
+
+.advantages__list {
+  padding-top: 37px;
+  counter-reset: item-order;
+  background: linear-gradient(to bottom, $background-secondary 37px, transparent 37px);
+  clip-path: polygon(
+    0% 100%,
+    calc(50% - 384px) 0%,
+    50% 37px,
+    calc(50% + 384px) 0%,
+    100% 100%
+  );
+
+  @media (min-width: $tablet-width) {
+    padding-top: 0;
+    background: none;
+    clip-path: none;
+  }
+}
+
+.advantages__item--order {
+  display: flex;
+  flex-direction: column;
+  counter-increment: item-order;
+
+  .advantages__item-title::after {
+    display: block;
+    margin-top: 10px;
+    font-weight: 400;
+    content: "— №" counter(item-order) " —";
+  }
+}
+
+.advantages__info {
+  padding: 37px $padding-side;
+}
+
+.advantages__item {
+  background-color: #eeeeee;
+}
+
+.advantages__item--wide {
+  background-color: $background-primary;
+}
+
+.advantages__item--wide .advantages__item {
+  background-color: $background-secondary;
+  color: $color-secondary;
+}
+
+.advantages__item--wide:nth-child(2n) .advantages__picture {
+  order: -1;
+}
+
+.advantages__subitem {
+  background-color: $background-primary;
+  color: $color-primary;
+}
+
+.advantages__item-title[class] {
+  margin-bottom: 21px;
+  order: -1;
+}
+
+.advantages__item-text {
+  margin: 0;
+}
+
+.advantages__picture {
+  grid-column: span 2;
+  padding: 0;
+
+  @media (min-width: $tablet-width) {
+    grid-column: span 2;
+  }
+}

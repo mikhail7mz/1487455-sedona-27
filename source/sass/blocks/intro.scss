@@ -1,0 +1,62 @@
+@use "../global/variables" as *;
+
+.intro {
+  position: relative;
+  background-color: fade-out($background-secondary, 0.4);
+  background-repeat: no-repeat;
+  background-size: 901px 389px;
+  background-position: center bottom;
+  background-image: url("../img/intro-background.jpg");
+  padding: 90px 0 85px;
+  clip-path: polygon(
+    calc(50% + 600px) 0,
+    calc(50% + 600px) calc(100% - 57px),
+    calc(50% + 350.4px) calc(100% - 23.7px),
+    calc(50% + 350.4px) calc(100% - 57px),
+    50% 100%,
+    calc(50% - 350.4px) calc(100% - 57px),
+    calc(50% - 350.4px) calc(100% - 23.7px),
+    calc(50% - 600px) calc(100% - 57px),
+    calc(50% - 600px) 0
+  );
+
+  @media (min-width: $tablet-width) {
+    padding: 77px 0 91px;
+    background-size: 1200px auto, 1200px auto;
+  }
+}
+
+.intro--small {
+  padding: 52px 0 67px;
+
+  @media (min-width: $tablet-width) {
+    padding: 95px 0 117px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 101px 0 120px;
+  }
+}
+
+.intro__image {
+  display: block;
+  margin: 0 auto;
+  width: 282px;
+  height: auto;
+
+  @media (min-width: $tablet-width) {
+    width: 461px;
+  }
+}
+
+.intro--small .intro__image {
+  width: 229px;
+
+  @media (min-width: $tablet-width) {
+    width: 457px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 460px;
+  }
+}
