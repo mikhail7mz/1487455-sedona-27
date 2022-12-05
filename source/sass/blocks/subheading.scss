@@ -1,8 +1,11 @@
+@use "../global/variables" as *;
+
 .subheading {
   margin-top: 0;
+  font-weight: 700;
   font-size: 18px;
   line-height: 26px;
-  color: var(--font-color-dark);
+  color: $color-primary-dark;
   text-transform: uppercase;
   text-align: center;
 }

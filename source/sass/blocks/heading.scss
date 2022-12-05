@@ -1,8 +1,10 @@
+@use "../global/variables.scss" as *;
+
 .heading {
   margin-top: 0;
   font-size: 18px;
   line-height: 26px;
-  color: var(--font-color-dark);
+  color: $color-primary-dark;
   text-align: center;
   text-transform: uppercase;
 }
