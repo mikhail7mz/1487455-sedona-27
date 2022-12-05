@@ -1,3 +1,27 @@
-.test {
-  background: none;
+@use "../global/variables" as *;
+
+.photo-and-video {
+  padding: 0 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+  }
+}
+
+.photo-and-video__header {
+  padding: 30px calc((20px / $mobile-width * 100%) - 20px) 42px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    padding: 61px calc(111px / ($tablet-width - 120px) * 100%) 83px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 100px 387px 64px;
+  }
 }
