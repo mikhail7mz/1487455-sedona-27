@@ -80,6 +80,10 @@
   color: $color-secondary;
 }
 
+.advantages__item--wide .advantages__item-title {
+  color: $color-secondary;
+}
+
 .advantages__item--wide:nth-child(2n) .advantages__picture {
   order: -1;
 }

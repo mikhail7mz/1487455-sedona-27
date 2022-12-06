@@ -1,3 +1,29 @@
-.test {
-  background: none;
+@use "../global/variables" as *;
+
+.video-presentation {
+  padding: 0 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
+    padding: 0 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 84px;
+    padding: 0 200px;
+  }
+}
+
+.video-presentation__header {
+  padding: 17px calc(7px / ($mobile-width - 40px) * 100%) 38px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    padding: 62px calc(101px / ($tablet-width - 120px) * 100%) 70px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 61px 177px 63px;
+  }
 }
