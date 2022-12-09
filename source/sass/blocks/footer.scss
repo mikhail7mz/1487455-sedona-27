@@ -1,16 +1,22 @@
 @use "../global/variables.scss" as *;
 
 .footer {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   justify-items: center;
   align-items: center;
   row-gap: 40px;
   padding: 28.5px $padding-side 22.9px;
 
   @media (min-width: $tablet-width) {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 36px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 36px 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 36px 120px;
   }
 }
 
@@ -24,5 +30,11 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 0;
+  }
+}
+
+.footer__copyrights {
+  @media (min-width: $tablet-width) {
+    transform: translateX(-16px);
   }
 }

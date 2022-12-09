@@ -8,4 +8,8 @@
   color: $color-primary-dark;
   text-transform: uppercase;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 21px;
+  }
 }

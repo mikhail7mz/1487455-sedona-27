@@ -2,6 +2,7 @@
 
 .page {
   height: 100%;
+  background-color: #f2f2f2;
 }
 
 .page__body {
@@ -12,7 +13,7 @@
   flex-direction: column;
   font: 400 14px/21px $font-primary;
   color: $color-primary;
-  background-color: #ffffff;
+  background-color: $background-primary;
 
   @media (min-width: $desktop-width) {
     max-width: $desktop-width;
