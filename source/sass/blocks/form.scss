@@ -264,8 +264,8 @@ $column-shift: 14px;
 
   &:focus {
     outline: none;
-    background-color: #f2f2f2;
-    box-shadow: inset 0 0 0 4px #e5e5e5;
+    box-shadow: 0 0 1px 2px $background-primary,
+      0 0 2px 4px $background-secondary;
   }
 
   &:hover {
@@ -299,23 +299,6 @@ $column-shift: 14px;
   display: block;
   margin-bottom: 16px;
 
-  &:focus [class^="form__control-"][class$="-label"]::before {
-    outline: none;
-    background-color: #f2f2f2;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover [class^="form__control-"][class$="-label"]::before {
-    background-color: #e5e5e5;
-  }
-
-  &:active [class^="form__control-"][class$="-label"]::before {
-    background-color: #d5d5d5;
-  }
-
   @media (min-width: $tablet-width) {
     margin-bottom: 0;
   }
@@ -324,11 +307,6 @@ $column-shift: 14px;
 .form__control-radio:last-of-type,
 .form__control-checkbox:last-of-type {
   margin-bottom: 0;
-}
-
-.form__control-radio-input,
-.form__control-checkbox-input {
-  display: none;
 }
 
 .form__control-radio-label,
@@ -379,6 +357,28 @@ $column-shift: 14px;
 .form__control-radio-input:checked:active ~ .form__control-radio-label::after,
 .form__control-checkbox-input:checked:active ~ .form__control-checkbox-label::after {
   opacity: 0.3;
+}
+
+.form__control-radio-input:focus ~ .form__control-radio-label::before,
+.form__control-checkbox-input:focus ~ .form__control-checkbox-label::before {
+  outline: none;
+  box-shadow: 0 0 1px 2px $background-primary,
+    0 0 2px 4px $background-secondary;
+}
+
+.form__control-radio:hover,
+.form__control-checkbox:hover {
+  cursor: pointer;
+}
+
+.form__control-radio:hover .form__control-radio-label::before,
+.form__control-checkbox:hover .form__control-checkbox-label::before {
+  background-color: #e5e5e5;
+}
+
+.form__control-radio:active .form__control-radio-label::before,
+.form__control-checkbox:active .form__control-checkbox-label::before {
+  background-color: #d5d5d5;
 }
 
 .form__control-textarea-field {
