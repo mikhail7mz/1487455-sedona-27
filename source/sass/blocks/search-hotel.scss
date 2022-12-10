@@ -1,7 +1,7 @@
 @use "../global/variables.scss" as *;
 
 .search-hotel {
-  padding: 38px calc($padding-side / $mobile-width * 100%) 49px;
+  padding: 41px calc($padding-side / $mobile-width * 100%) 48px;
   text-align: center;
   text-transform: uppercase;
 
@@ -10,25 +10,30 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding: 61px 371px 66px;
+    padding: 61px 371px 67px;
   }
 }
 
 .search-hotel__title {
-  margin-bottom: 26px;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 30px;
+  }
 }
 
 .search-hotel__button {
-  margin-top: 32px;
+  width: 100%;
+  margin-top: 33px;
   padding: 16px;
 
   @media (min-width: $tablet-width) {
-    margin-top: 40px;
+    margin-top: 44px;
     padding-top: 14.5px;
     padding-bottom: 17.5px;
   }
 
-  @media (min-width: $tablet-width) {
-    margin-top: 45px;
+  @media (min-width: $desktop-width) {
+    margin-top: 49px;
   }
 }

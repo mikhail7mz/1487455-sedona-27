@@ -7,8 +7,14 @@
   color: $color-primary-dark;
   text-align: center;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+  }
 }
 
 .heading--big {
-  font-size: 21px;
+  @media (max-width: $mobile-width) {
+    font-size: 21px;
+  }
 }

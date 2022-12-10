@@ -1,40 +1,69 @@
 @use "../global/variables.scss" as *;
 
 .advantages {
-  padding-top: 32px;
+  padding-top: 34px;
   text-align: center;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 49px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 59px;
+  }
+}
+
+.advantages__header {
+  max-width: 520px;
+  margin: 0 auto 16px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 55px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 45px;
+  }
 }
 
 .advantages__title {
   margin-bottom: 35px;
   padding: 0 $padding-side;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 29px;
+  }
 }
 
 .advantages__text {
-  padding: 0 $padding-side;
-  margin: 16px 0;
+  margin: 0;
 }
 
 .advantages__list,
 .advantages__item--wide,
 .advantages__sublist {
+  display: block;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
   list-style-type: none;
 
   @media (min-width: $tablet-width) {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column: span 3;
   }
 }
 
 .advantages__list {
-  padding-top: 37px;
+  padding-top: 34px;
   counter-reset: item-order;
-  background: linear-gradient(to bottom, $background-secondary 37px, transparent 37px);
+  background: linear-gradient(
+    to bottom,
+    $background-secondary 40px,
+    transparent 40px
+  );
+  background-clip: border-box;
   clip-path: polygon(
     0% 100%,
     calc(50% - 384px) 0%,
@@ -54,59 +83,213 @@
   display: flex;
   flex-direction: column;
   counter-increment: item-order;
+}
 
-  .advantages__item-title::after {
-    display: block;
-    margin-top: 10px;
-    font-weight: 400;
-    content: "— №" counter(item-order) " —";
+.advantages__item--order .advantages__item-title::after {
+  display: block;
+  margin-top: 11px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  content: "— №" counter(item-order) " —";
+
+  @media (min-width: $tablet-width) {
+    margin-top: 15px;
+  }
+}
+
+.advantages__item-title {
+  margin-bottom: 16px;
+  order: -1;
+
+  @media (min-width: $tablet-width) {
+    width: 84%;
+    margin: 0 auto 21px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 55%;
   }
 }
 
 .advantages__info {
-  padding: 37px $padding-side;
+  padding: 25px 32px;
+  border-bottom: 1px solid #d6d6d6;
+
+  @media (min-width: $tablet-width) {
+    padding: 41px 33px;
+    justify-content: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 51px 56px 51px;
+  }
 }
 
-.advantages__item {
+.advantages__info:last-child {
+  border-bottom: 0;
+}
+
+.advantages__info--theme-light {
   background-color: #eeeeee;
 }
 
-.advantages__item--wide {
-  background-color: $background-primary;
-}
-
-.advantages__item--wide .advantages__item {
+.advantages__info--theme-dark {
+  padding: 38px 29px;
   background-color: $background-secondary;
   color: $color-secondary;
+
+  @media (min-width: $tablet-width) {
+    padding: 37px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 37px 60px;
+  }
 }
 
-.advantages__item--wide .advantages__item-title {
-  color: $color-secondary;
+.advantages__info--theme-dark .advantages__item-title {
+  color: inherit;
 }
 
-.advantages__item--wide:nth-child(2n) .advantages__picture {
+.advantages__info--has-icon {
+  position: relative;
+  margin-bottom: 25px;
+  padding: 8px $padding-side 0 $padding-side + 47px;
+  border: 0;
+  text-align: left;
+
+  @media (min-width: $tablet-width) {
+    padding: 56px 33px 61px;
+    text-align: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 66px 50px 69px;
+  }
+
+  &::before {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: $padding-side;
+    background-size: 100% 100%;
+    content: "";
+
+    @media (min-width: $tablet-width) {
+      position: static;
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 24px;
+    }
+  }
+}
+
+.advantages__info--has-icon:last-child {
+  margin-bottom: 0;
+}
+
+.advantages__info--has-icon-housing::before {
+  background-image: url("../img/icons/housing.svg");
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 24px;
+  }
+}
+
+.advantages__info--has-icon-eating::before {
+  background-image: url("../img/icons/food.svg");
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 22px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.advantages__info--has-icon-souvenirs::before {
+  background-image: url("../img/icons/souvenirs.svg");
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 14px;
+    transform: translateX(3px);
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 27px;
+    transform: translateX(-1px) scaleX(1.25);
+  }
+}
+
+.advantages__info--has-icon .advantages__item-title {
+  margin-bottom: 16px;
+  text-align: left;
+
+  @media (min-width: $tablet-width) {
+    text-align: center;
+    margin-bottom: 23px;
+  }
+}
+
+.advantages__info--short {
+  padding-left: 31px;
+  padding-right: 33px;
+
+  @media (min-width: $tablet-width) {
+    padding-left: 41px;
+    padding-right: 41px;
+  }
+}
+
+.advantages__item--wide:nth-child(2n) .advantages__item--picture {
   order: -1;
+}
+
+.advantages__sublist {
+  align-items: center;
+  max-width: 512px;
+  margin: 0 auto;
+  padding-top: 23px;
+  padding-bottom: 45px;
+
+  @media (min-width: $tablet-width) {
+    max-width: 100%;
+    padding: 0;
+  }
 }
 
 .advantages__subitem {
-  background-color: $background-primary;
-  color: $color-primary;
+  margin-bottom: 25px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
 }
 
-.advantages__item-title[class] {
-  margin-bottom: 21px;
-  order: -1;
+.advantages__subitem:last-child {
+  margin-bottom: 0;
 }
 
 .advantages__item-text {
   margin: 0;
 }
 
-.advantages__picture {
+.advantages__item--picture {
   grid-column: span 2;
   padding: 0;
+  background-color: #d5d5d5;
 
   @media (min-width: $tablet-width) {
     grid-column: span 2;
   }
+}
+
+.advantages__image {
+  display: block;
+  width: auto;
+  margin: 0 auto;
 }

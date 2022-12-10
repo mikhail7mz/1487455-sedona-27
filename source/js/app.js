@@ -1,6 +1,8 @@
 let navigationButton = document.querySelector('.navigation__button');
 let navigationList = document.querySelector('.navigation__list');
 
+document.querySelector(".navigation--no-js").classList.remove("navigation--no-js");
+
 navigationButton.addEventListener('click', function(e) {
   e.preventDefault();
 

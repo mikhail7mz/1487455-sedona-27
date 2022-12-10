@@ -10,7 +10,7 @@
   <body class="page__body">
     <h1 class="visually-hidden">Добро пожаловать в Седону.</h1>
     <header>
-      <nav class="navigation">
+      <nav class="navigation navigation--no-js">
         <button class="navigation__button" type="button">
           <span class="visually-hidden">Кнопка открытия меню.</span>
         </button>
@@ -55,46 +55,60 @@
         <img class="intro__image" src="img/welcome-text.svg" width="282" height="214" alt="Красивый текст «Welcome to the gorgeous SEDONA Because the Grand Canyon sucks».">
       </section>
       <section class="advantages">
-        <h2 class="advantages__title subheading">Седона — небольшой городок&nbsp;в&nbsp;Аризоне, заслуживающий&nbsp;большего!</h2>
-        <p class="advantages__text">Рассмотрим 5 причин, по которым Седона&nbsp;круче, чем Гранд-Каньон!</p>
+        <header class="advantages__header">
+          <h2 class="advantages__title subheading">Седона — небольшой городок&nbsp;в&nbsp;Аризоне, заслуживающий&nbsp;большего!</h2>
+          <p class="advantages__text">Рассмотрим 5 причин, по которым Седона&nbsp;круче, чем Гранд-Каньон!</p>
+        </header>
         <ol class="advantages__list">
           <li class="advantages__item advantages__item--wide">
-            <div class="advantages__item advantages__item--order advantages__info">
+            <div class="advantages__item advantages__item--order advantages__info advantages__info--theme-dark">
               <h3 class="advantages__item-title subheading">Настоящий городок</h3>
-              <p class="advantages__item-text">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
+              <p class="advantages__item-text">Седона не аттракцион для туристов, там течёт своя жизнь</p>
             </div>
-            <img class="advantages__item advantages__picture" src="img/real-city.jpg" width="520" height="260" alt="Небольшой участок городка Седона.">
+            <div class="advantages__item advantages__item--picture">
+              <picture>
+                <source media="(min-width: 769px)" srcset="img/real-city--desktop.jpg 1x, img/real-city--desktop@2x.jpg 2x">
+                <source media="(min-width: 321px)" srcset="img/real-city--tablet.jpg 1x, img/real-city--tablet@2x.jpg 2x">
+                <img class="advantages__image" src="img/real-city--mobile.jpg" srcset="img/real-city--mobile@2x.jpg 2x" width="520" height="260" alt="Небольшой участок городка Седона.">
+              </picture>
+            </div>
             <ul class="advantages__item advantages__sublist">
-              <li class="advantages__subitem advantages__info">
-                <h4 class="advantages__item-title subheading">Жильё</h4>
+              <li class="advantages__subitem advantages__info advantages__info--has-icon advantages__info--has-icon-housing">
+                <h4 class="advantages__item-title subheading">Жилье</h4>
                 <p class="advantages__item-text">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
               </li>
-              <li class="advantages__subitem advantages__info">
+              <li class="advantages__subitem advantages__info advantages__info--has-icon advantages__info--has-icon-eating">
                 <h4 class="advantages__item-title subheading">Еда</h4>
-                <p class="advantages__item-text">Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь!</p>
+                <p class="advantages__item-text">Всегда заказывайте фирменный бургер, вы&nbsp;не&nbsp;разочаруетесь!</p>
               </li>
-              <li class="advantages__subitem advantages__info">
+              <li class="advantages__subitem advantages__info advantages__info--has-icon advantages__info--has-icon-souvenirs">
                 <h4 class="advantages__item-title subheading">Сувениры</h4>
-                <p class="advantages__item-text">Не только китайского, но и настоящего местного производства!</p>
+                <p class="advantages__item-text">Не только китайского, <br class="breaker breaker--desktop">но&nbsp;и местного производства!</p>
               </li>
             </ul>
           </li>
           <li class="advantages__item advantages__item--wide">
-            <div class="advantages__item advantages__item--order advantages__info">
-              <h3 class="advantages__item-title subheading">Там есть мост дьявола</h3>
-              <p class="advantages__item-text">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
+            <div class="advantages__item advantages__item--order advantages__info advantages__info--theme-dark">
+              <h3 class="advantages__item-title subheading">Там есть мост&nbsp;дьявола</h3>
+              <p class="advantages__item-text">Да, по нему можно пройти! <br class="breaker breaker--desktop">Если вы осмелитесь, конечно</p>
             </div>
-            <img class="advantages__item advantages__picture" src="img/bridge.jpg" width="520" height="260" alt="Мост дьявола.">
+            <div class="advantages__item advantages__item--picture">
+              <picture>
+                <source media="(min-width: 769px)" srcset="img/bridge--desktop.jpg 1x, img/bridge--desktop@2x.jpg 2x">
+                <source media="(min-width: 321px)" srcset="img/bridge--tablet.jpg 1x, img/bridge--tablet@2x.jpg 2x">
+                <img class="advantages__image" src="img/bridge--mobile.jpg" srcset="img/bridge--mobile@2x.jpg 2x" width="520" height="260" alt="Мост дьявола.">
+              </picture>
+            </div>
           </li>
-          <li class="advantages__item advantages__item--order advantages__info">
+          <li class="advantages__item advantages__item--order advantages__info advantages__info--theme-light">
             <h3 class="advantages__item-title subheading">Небольшая площадь</h3>
-            <p class="advantages__item-text">Все достопримечательности находятся очень близко</p>
+            <p class="advantages__item-text">Все интересные места находятся очень близко</p>
           </li>
-          <li class="advantages__item advantages__item--order advantages__info">
+          <li class="advantages__item advantages__item--order advantages__info advantages__info--theme-light advantages__info--short">
             <h3 class="advantages__item-title subheading">Красивая дорога</h3>
-            <p class="advantages__item-text">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+            <p class="advantages__item-text">Ехать в Седону из Лас-Вегаса совсем не&nbsp;скучно!</p>
           </li>
-          <li class="advantages__item advantages__item--order advantages__info">
+          <li class="advantages__item advantages__item--order advantages__info advantages__info--theme-light">
             <h3 class="advantages__item-title subheading">Мало туристов</h3>
             <p class="advantages__item-text">Большинство едет в Гранд Каньон и толпится там</p>
           </li>
@@ -102,12 +116,16 @@
       </section>
       <section class="search-hotel">
         <h2 class="search-hotel__title heading heading--big">Заинтересовались?</h2>
-        <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        <p>Укажите предполагаемые даты поездки, и&nbsp;мы&nbsp;покажем&nbsp;вам&nbsp;лучшие предложения гостиниц в Седоне</p>
         <a class="search-hotel__button button" href="#">Найти Гостиницу</a>
       </section>
       <section class="location">
         <h2 class="visually-hidden">Местоположение на карте.</h2>
-        <img class="location__image" src="img/location.jpg" width="320" height="350" alt="Карта с местоположением Седоны.">
+        <picture>
+          <source media="(min-width: 769px)" srcset="img/location--desktop.jpg 1x, img/location--desktop@2x.jpg 2x">
+          <source media="(min-width: 321px)" srcset="img/location--tablet.jpg 1x, img/location--tablet@2x.jpg 2x">
+          <img class="location__image" src="img/location--mobile.jpg" srcset="img/location--mobile@2x.jpg 2x" width="320" height="350" alt="Карта с местоположением Седоны.">
+        </picture>
       </section>
     </main>
     <footer class="footer">
@@ -129,7 +147,7 @@
           </a>
         </li>
       </ul>
-      <a class="copyrights" href="https://htmlacademy.ru/intensive/adaptive">
+      <a class="footer__copyrights copyrights" href="https://htmlacademy.ru/intensive/adaptive">
         <span>Разработано</span>
         <span class="visually-hidden">htmlacademy.</span>
         <svg class="copyrights__icon" width="27" height="35" viewBox="0 0 27 35" aria-hidden="true" focusable="false" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
