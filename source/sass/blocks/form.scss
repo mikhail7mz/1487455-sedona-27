@@ -18,6 +18,128 @@ $column-shift: 14px;
   }
 }
 
+.form__modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: fade-out($color-primary-dark, 0.7);
+}
+
+.form__modal-overlay--opened {
+  display: block;
+}
+
+.form__modal {
+  display: none;
+  position: absolute;
+  left: 50%;
+  z-index: 101;
+  width: 100%;
+  max-width: 400px;
+  padding: 45px 0 35px;
+  transform: translateX(-50%);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $background-primary;
+  box-shadow: 0 7px 15 rgba(0, 1, 1, 0.15);
+
+  @media (min-width: $tablet-width) {
+    padding: 54px 0 49px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 48px 0 49px;
+  }
+}
+
+.form__modal--opened {
+  display: block;
+}
+
+.form__modal-title {
+  background-color: $background-primary;
+  margin: 0;
+  margin-bottom: 26px;
+  padding: 0 41px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: $color-primary-dark;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 24px;
+    padding: 0 81px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 25px;
+  }
+}
+
+.form__modal-message {
+  padding: 0 41px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 46px;
+  }
+}
+
+.form__modal-controls {
+  margin-top: 28px;
+  padding: 0 70px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 41px;
+    padding: 0 64px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 47px;
+  }
+}
+
+.form__modal-button {
+  width: 100%;
+  padding: 18px 14px 14px;
+  font-size: 18px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 21px;
+  }
+}
+
+.form__modal--success {
+  max-width: 640px;
+  padding-bottom: 0;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 43px;
+  }
+
+  .form__modal-message {
+    @media (min-width: $tablet-width) {
+      padding: 0 100px;
+    }
+  }
+
+  .form__modal-controls {
+    margin-top: 45px;
+    padding: 20px;
+    background-color: #f2f2f2;
+
+    @media (min-width: $tablet-width) {
+      margin-top: 52px;
+      padding: 44px 91px;
+    }
+  }
+}
+
 .form__header {
   max-width: 435px;
   margin: 0 auto 24px;
