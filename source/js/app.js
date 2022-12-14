@@ -3,7 +3,7 @@ let navigationList = document.querySelector('.navigation__list');
 
 document.querySelector(".navigation--no-js").classList.remove("navigation--no-js");
 
-navigationButton.addEventListener('click', function(e) {
+navigationButton.addEventListener('click', (e) => {
   e.preventDefault();
 
   navigationButton.classList.toggle('navigation__button--close');
