@@ -1,4 +1,4 @@
-@use "../global/variables.scss" as *;
+@use "../global/variables" as *;
 
 .search-hotel {
   padding: 41px calc($padding-side / $mobile-width * 100%) 48px;

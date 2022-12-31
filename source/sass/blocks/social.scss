@@ -1,4 +1,4 @@
-@use "../global/variables.scss" as *;
+@use "../global/variables" as *;
 
 .social {
   display: inline-flex;
@@ -23,19 +23,20 @@
     height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: 24px 24px;
     content: "";
   }
 
   &--vk::before {
-    background-image: url("../img/icons/vk.svg");
+    background-image: url("../img/stack.svg#icons_vk");
   }
 
   &--telegram::before {
-    background-image: url("../img/icons/telegram.svg");
+    background-image: url("../img/stack.svg#icons_telegram");
   }
 
   &--youtube::before {
-    background-image: url("../img/icons/youtube.svg");
+    background-image: url("../img/stack.svg#icons_youtube");
   }
 
   &:focus {

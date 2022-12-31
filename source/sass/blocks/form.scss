@@ -406,13 +406,15 @@ $column-shift: 14px;
   background-repeat: no-repeat;
 
   &-phone {
-    background-image: url("../img/icons/phone.svg"), $icon-background;
+    background-image: url("../img/stack.svg#icons_phone"), $icon-background;
     background-position: right 20px center, right center;
+    background-size: 18px 18px, auto;
   }
 
   &-email {
-    background-image: url("../img/icons/mail.svg"), $icon-background;
+    background-image: url("../img/stack.svg#icons_mail"), $icon-background;
     background-position: right 21px center, right center;
+    background-size: 16px 12px, auto;
   }
 }
 
@@ -473,7 +475,8 @@ $column-shift: 14px;
 }
 
 .form__control-checkbox-input:checked ~ .form__control-checkbox-label::after {
-  background-image: url("../img/icons/checkbox.svg");
+  background-image: url("../img/stack.svg#icons_checkbox");
+  background-size: 22px 16px, auto;
 }
 
 .form__control-radio-input:checked:active ~ .form__control-radio-label::after,
