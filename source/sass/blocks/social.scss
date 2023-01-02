@@ -47,11 +47,13 @@
 
   &:hover {
     background-color: $background-secondary-hover;
+    box-shadow: none;
     cursor: pointer;
   }
 
   &:active {
     background-color: $background-secondary-active;
+    box-shadow: none;
   }
 
   &:active::before {

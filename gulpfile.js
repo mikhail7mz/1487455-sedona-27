@@ -114,9 +114,7 @@ const server = (done) => {
   done();
 }
 
-// Reload
-
-const reload = (done) => {
+const serverReload = (done) => {
   browser.reload();
   done();
 }
@@ -127,7 +125,7 @@ export const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series(styles));
   gulp.watch('source/js/**/*.js', gulp.series(scripts));
   gulp.watch('source/img/**/*.svg', gulp.series(createSvgStack));
-  gulp.watch('source/*.html', gulp.series(html, reload));
+  gulp.watch('source/*.html', gulp.series(html, serverReload));
 }
 
 // Npm run build

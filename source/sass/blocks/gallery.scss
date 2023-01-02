@@ -54,6 +54,7 @@
     margin: 0 auto;
     border: 0;
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
   }
 
   @media (min-width: $tablet-width) {
@@ -77,10 +78,6 @@
     border: 0;
     padding: 0;
   }
-}
-
-.gallery__item--wide {
-  grid-column: 1/-1;
 }
 
 .gallery__picture {
@@ -109,7 +106,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 17px 19px 17px 25px;
+    padding: 19px 19px 16px 25px;
     color: $color-secondary;
     background-color: rgba(0, 0, 0, 0.3);
   }
@@ -126,24 +123,29 @@
 
 .gallery__title {
   display: block;
-  max-height: 63px;
   font-weight: 700;
   color: $color-primary-dark;
   text-transform: uppercase;
-  overflow: auto;
 
   @media (min-width: $tablet-width) {
     margin-bottom: 1px;
   }
 
   @media (min-width: $desktop-width) {
+    max-height: 53px;
     margin-bottom: 2px;
     color: $color-secondary;
+    overflow: auto;
   }
 }
 
 .gallery__author {
   display: block;
+
+  @media (min-width: $desktop-width) {
+    max-height: 33px;
+    overflow: auto;
+  }
 }
 
 .gallery__likes {
@@ -151,33 +153,49 @@
   display: flex;
   gap: 14px;
   margin: 0;
+  padding-top: 4px;
   font-weight: 700;
   color: $color-primary-dark;
 
   @media (min-width: $tablet-width) {
-    padding-top: 6px;
+    padding-top: 10px;
     gap: 9px;
   }
 
   @media (min-width: $desktop-width) {
-    padding-top: 11px;
+    padding-top: 13px;
     color: $color-secondary;
   }
 }
 
-.gallery__likes-icon {
+.gallery__likes::before {
   flex-shrink: 0;
+  width: 23px;
+  height: 21px;
+  background-color: $color-primary-dark;
+  mask: url("../img/stack.svg#icons_like") center / cover;
   opacity: 0.3;
+  transform: translateY(-4px);
+  content: "";
 
   @media (min-width: $desktop-width) {
+    background-color: $background-primary;
     opacity: 1;
   }
 }
 
-.gallery__likes-text {
-  padding-top: 4px;
+.gallery__item--wide {
+  grid-column: 1/-1;
 
-  @media (min-width: $desktop-width) {
-    padding-top: 2px;
+  .gallery__caption {
+    @media (min-width: $desktop-width) {
+      padding: 21px 20px 14px 21px;
+    }
+  }
+
+  .gallery__likes {
+    @media (min-width: $desktop-width) {
+      padding-top: 11px;
+    }
   }
 }

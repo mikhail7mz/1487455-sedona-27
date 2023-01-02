@@ -18,7 +18,7 @@ formSubmitButton.addEventListener('click', (e) => {
     },
     'success' : {
       'title' : 'Ваш отзыв отправлен!',
-      'message' : 'Спасибо за ваше участие, ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.',
+      'message' : 'Спасибо за ваше участие, ваш отзыв уже поступил к нам. <br>В ближайшее время мы опубликуем его на сайте.',
       'buttonText' : 'Закрыть окно'
     }
   }
@@ -31,9 +31,9 @@ formSubmitButton.addEventListener('click', (e) => {
     }
   };
 
-  title.textContent = text.title;
-  message.textContent = text.message;
-  buttonClose.textContent = text.buttonText;
+  title.innerHTML = text.title;
+  message.innerHTML = text.message;
+  buttonClose.innerHTML = text.buttonText;
 
   if (text == info.success) {
     formModal.classList.add('form__modal--success');
