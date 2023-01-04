@@ -1,4 +1,4 @@
-@use "../global/variables.scss" as *;
+@use "../global/variables" as *;
 
 .button {
   display: block;
@@ -18,12 +18,14 @@
 
   &:hover {
     background-color: $background-secondary-hover;
+    box-shadow: none;
     cursor: pointer;
   }
 
   &:active {
     color: fade-out($color-secondary, 0.7);
     background-color: $background-secondary-active;
+    box-shadow: none;
   }
 
   &:disabled {

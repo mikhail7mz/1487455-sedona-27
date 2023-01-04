@@ -1,9 +1,17 @@
-@use "../global/variables.scss" as *;
+@use "../global/variables" as *;
 
-.breaker--desktop {
-  display: none;
+.breaker::after {
+  content: "\A";
+}
 
+.breaker--tablet::after {
+  @media (min-width: $tablet-width) {
+    white-space: pre;
+  }
+}
+
+.breaker--desktop::after {
   @media (min-width: $desktop-width) {
-    display: inline;
+    white-space: pre;
   }
 }

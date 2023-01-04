@@ -35,17 +35,20 @@ $column-shift: 14px;
 
 .form__modal {
   display: none;
-  position: absolute;
+  position: fixed;
+  max-height: 80vh;
+  top: 50%;
   left: 50%;
   z-index: 101;
   width: 100%;
   max-width: 400px;
   padding: 45px 0 35px;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   text-transform: uppercase;
   background-color: $background-primary;
   box-shadow: 0 7px 15 rgba(0, 1, 1, 0.15);
+  overflow-y: auto;
 
   @media (min-width: $tablet-width) {
     padding: 54px 0 49px;
@@ -141,7 +144,7 @@ $column-shift: 14px;
 }
 
 .form__header {
-  max-width: 435px;
+  max-width: 440px;
   margin: 0 auto 24px;
   padding: 0 20px 28px;
   border-bottom: 1px solid #e5e5e5;
@@ -173,7 +176,7 @@ $column-shift: 14px;
 }
 
 .form__title {
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
   padding: 0;
 
   @media (min-width: $tablet-width) {
@@ -340,7 +343,7 @@ $column-shift: 14px;
   width: 100%;
   max-width: 768px;
   margin: 0 auto;
-  padding: 33px 20px 24px;
+  padding: 32px 20px 24px;
 
   @media (min-width: $tablet-width) {
     grid-column: span 2;
@@ -406,13 +409,15 @@ $column-shift: 14px;
   background-repeat: no-repeat;
 
   &-phone {
-    background-image: url("../img/icons/phone.svg"), $icon-background;
+    background-image: url("../img/stack.svg#icons_phone"), $icon-background;
     background-position: right 20px center, right center;
+    background-size: 18px 18px, auto;
   }
 
   &-email {
-    background-image: url("../img/icons/mail.svg"), $icon-background;
+    background-image: url("../img/stack.svg#icons_mail"), $icon-background;
     background-position: right 21px center, right center;
+    background-size: 16px 12px, auto;
   }
 }
 
@@ -473,7 +478,8 @@ $column-shift: 14px;
 }
 
 .form__control-checkbox-input:checked ~ .form__control-checkbox-label::after {
-  background-image: url("../img/icons/checkbox.svg");
+  background-image: url("../img/stack.svg#icons_checkbox");
+  background-size: 22px 16px, auto;
 }
 
 .form__control-radio-input:checked:active ~ .form__control-radio-label::after,

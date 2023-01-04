@@ -7,7 +7,11 @@
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/180.png">
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="preload" href="fonts/ptsans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ptsans.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ptsansbold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ptsansbold.woff" as="font" type="font/woff" crossorigin="anonymous">
     <title>HTML Academy: Седона</title>
   </head>
   <body class="page__body">
@@ -17,20 +21,18 @@
         <button class="navigation__button" type="button">
           <span class="visually-hidden">Кнопка открытия меню.</span>
         </button>
+        <a class="navigation__logo" href="index.html">
+          <span class="visually-hidden">Логотип сайта. Переход на главную.</span>
+          <svg class="navigation__logo-image" width="185" height="96" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/stack.svg#logo"/>
+          </svg>
+        </a>
         <ul class="navigation__list">
           <li class="navigation__item">
             <a class="navigation__link" href="index.html">Главная</a>
           </li>
           <li class="navigation__item">
             <a class="navigation__link" href="catalog.html">Фото и видео</a>
-          </li>
-          <li class="navigation__item navigation__item--logo">
-            <a class="navigation__link navigation__link--logo" href="index.html">
-              <span class="visually-hidden">Логотип сайта. Переход на главную.</span>
-              <svg class="navigation__logo" width="185" height="96" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/sprite.svg#logo">
-              </svg>
-            </a>
           </li>
           <li class="navigation__item navigation__item--current">
             <span class="navigation__link">Форма Отзыва</span>
@@ -44,7 +46,7 @@
     <main class="page__main">
       <section class="intro intro--small">
         <h2 class="visually-hidden">Приветствие.</h2>
-        <img class="intro__image" src="img/sedona.svg" width="229" height="39" alt="Дизайнерский текст «SEDONA.">
+        <img class="intro__image" src="img/stack.svg#sedona" width="229" height="39" alt="Дизайнерский текст «SEDONA.">
       </section>
       <form class="form" action="https://echo.htmlacademy.ru/" method="post">
         <header class="form__header">
@@ -125,7 +127,7 @@
         <div class="form__modal-overlay"></div>
         <div class="form__modal">
           <h2 class="form__modal-title">Ваш отзыв отправлен!</h2>
-          <p class="form__modal-message">Спасибо за ваше участие, ваш отзыв уже поступил к нам. В&nbsp;ближайшее время мы опубликуем его на сайте.</p>
+          <p class="form__modal-message">Спасибо за ваше участие, ваш отзыв уже поступил к нам. <br>В&nbsp;ближайшее время мы опубликуем его на сайте.</p>
           <div class="form__modal-controls">
             <button class="form__modal-button button js-modal-close" type="button">ЗАкРЫТЬ ОКНО</button>
           </div>
@@ -151,12 +153,9 @@
           </a>
         </li>
       </ul>
-      <a class="copyrights" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Сайт Html Aacademy.">
+      <a class="footer__copyrights" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Сайт Html Aacademy.">
         <span>Разработано</span>
         <span class="visually-hidden">htmlacademy.</span>
-        <svg class="copyrights__icon" width="27" height="35" aria-hidden="true" focusable="false" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="img/sprite.svg#htmlacademy-logo">
-        </svg>
       </a>
     </footer>
 

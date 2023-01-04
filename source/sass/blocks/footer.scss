@@ -1,22 +1,33 @@
-@use "../global/variables.scss" as *;
+@use "../global/variables" as *;
 
 .footer {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
   row-gap: 40px;
   padding: 28.5px $padding-side 22.9px;
 
   @media (min-width: $tablet-width) {
-    flex-direction: row;
-    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 36px 60px;
   }
 
   @media (min-width: $desktop-width) {
     padding: 36px 120px;
+  }
+}
+
+.footer > *:nth-child(3n-2) {
+  @media (min-width: $tablet-width) {
+    justify-self: start;
+  }
+}
+
+.footer > *:nth-child(3n) {
+  @media (min-width: $tablet-width) {
+    justify-self: end;
   }
 }
 
@@ -34,6 +45,51 @@
 }
 
 .footer__copyrights {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 35px;
+  color: $color-primary-dark;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &::after {
+    flex-shrink: 0;
+    display: block;
+    width: 27px;
+    height: 35px;
+    background-color: $color-primary-dark;
+    mask: url("../img/stack.svg#htmlacademy-logo") no-repeat center / cover;
+    content: "";
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 2px $background-primary,
+      0 0 2px 4px $background-secondary;
+  }
+
+  &:hover {
+    color: $background-secondary;
+    box-shadow: none;
+    cursor: pointer;
+
+    &::after {
+      background-color: $background-secondary;
+    }
+  }
+
+  &:active {
+    color: #b3b3b3;
+    box-shadow: none;
+
+    &::after {
+      background-color: #b3b3b3;
+    }
+  }
+}
+
+.footer__copyrights--displaced {
   @media (min-width: $tablet-width) {
     transform: translateX(-16px);
   }

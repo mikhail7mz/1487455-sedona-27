@@ -1,4 +1,4 @@
-@use "../global/variables.scss" as *;
+@use "../global/variables" as *;
 
 .search-hotel {
   padding: 41px calc($padding-side / $mobile-width * 100%) 48px;
@@ -20,6 +20,10 @@
   @media (min-width: $tablet-width) {
     margin-bottom: 30px;
   }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 33px;
+  }
 }
 
 .search-hotel__button {
@@ -34,6 +38,6 @@
   }
 
   @media (min-width: $desktop-width) {
-    margin-top: 49px;
+    margin-top: 47px;
   }
 }

@@ -4,9 +4,9 @@
   position: relative;
   background-color: fade-out($background-secondary, 0.4);
   background-repeat: no-repeat;
-  background-size: 901px 389px;
+  background-size: cover;
   background-position: center bottom;
-  background-image: url("../img/intro-background.jpg");
+  background-image: url("../img/intro-background--mobile.jpg");
   padding: 90px 0 85px;
   clip-path: polygon(
     calc(50% + 600px) 0,
@@ -20,9 +20,28 @@
     calc(50% - 600px) 0
   );
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/intro-background--mobile@2x.jpg");
+  }
+
+  @media (min-width: ($mobile-width + 1)) {
+    background-image: url("../img/intro-background--tablet.jpg");
+  }
+
+  @media (min-resolution: 2dppx) and (min-width: ($mobile-width + 1)) {
+    background-image: url("../img/intro-background--tablet@2x.jpg");
+  }
+
+  @media (min-width: ($tablet-width + 1)) {
+    background-image: url("../img/intro-background--desktop.jpg");
+  }
+
+  @media (min-resolution: 2dppx) and (min-width: ($tablet-width + 1)) {
+    background-image: url("../img/intro-background--desktop@2x.jpg");
+  }
+
   @media (min-width: $tablet-width) {
     padding: 77px 0 91px;
-    background-size: 1200px auto, 1200px auto;
   }
 }
 
