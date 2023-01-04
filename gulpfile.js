@@ -12,6 +12,7 @@ import squoosh from 'gulp-libsquoosh';
 import svgo from 'gulp-svgmin';
 import del from 'del';
 import { stacksvg } from 'gulp-stacksvg';
+import ghpages from 'gulp-gh-pages';
 
 // Html
 
@@ -142,6 +143,13 @@ export const build = gulp.series(
     optimizeSvg,
     createSvgStack
 ));
+
+// Npm run deploy
+
+export const deploy = () => {
+  return gulp.src('build/**/*')
+    .pipe(ghpages());
+};
 
 // Npm run start
 
