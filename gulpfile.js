@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import gulpif from 'gulp-if';
 import browser from 'browser-sync';
 import htmlmin from 'gulp-htmlmin';
 import plumber from 'gulp-plumber';
@@ -12,11 +13,12 @@ import squoosh from 'gulp-libsquoosh';
 import svgo from 'gulp-svgmin';
 import del from 'del';
 import { stacksvg } from 'gulp-stacksvg';
-import ghpages from 'gulp-gh-pages';
 
-// Html
+let isDevelopment = true;
 
-const html = () => {
+// Markup
+
+const processMarkup = () => {
   return gulp.src('source/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('build'));
@@ -24,7 +26,7 @@ const html = () => {
 
 // Styles
 
-const styles = () => {
+const processStyles = () => {
   return gulp.src('source/sass/style.scss', { sourcemaps: true })
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
@@ -39,7 +41,7 @@ const styles = () => {
 
 // Scripts
 
-const scripts = () => {
+const processScripts = () => {
   return gulp.src('source/js/*.js')
     .pipe(terser())
     .pipe(gulp.dest('build/js'));
@@ -47,14 +49,9 @@ const scripts = () => {
 
 // Images
 
-const copyImages = () => {
-  return gulp.src(['source/img/**/*.{jpg,png}', '!source/img/favicons/*.png'])
-    .pipe(gulp.dest('build/img'));
-}
-
-const optimizeImages = () => {
+const processImages = () => {
   return gulp.src('source/img/**/*.{jpg,png}')
-    .pipe(squoosh())
+    .pipe(gulpif(!isDevelopment, squoosh()))
     .pipe(gulp.dest('build/img'));
 }
 
@@ -81,9 +78,9 @@ const createSvgStack = () => {
     .pipe(gulp.dest('build/img'));
 }
 
-// Coping
+// Coping assets
 
-const copy = (done) => {
+const copyAssets = (done) => {
   gulp.src([
     'source/fonts/*.{woff,woff2}',
     'source/*.ico',
@@ -95,10 +92,25 @@ const copy = (done) => {
   done();
 }
 
-// Clean
+// Remove build
 
-const clean = () => {
+const removeBuild = () => {
   return del('build');
+}
+
+// CompileProject
+
+const compileProject = (done) => {
+  gulp.parallel(
+    copyAssets,
+    processMarkup,
+    processStyles,
+    processImages,
+    processScripts,
+    createWebp,
+    optimizeSvg,
+    createSvgStack
+  )(done);
 }
 
 // Server
@@ -123,49 +135,27 @@ const serverReload = (done) => {
 // Watcher
 
 export const watcher = () => {
-  gulp.watch('source/sass/**/*.scss', gulp.series(styles));
-  gulp.watch('source/js/**/*.js', gulp.series(scripts));
+  gulp.watch('source/sass/**/*.scss', gulp.series(processStyles));
+  gulp.watch('source/js/**/*.js', gulp.series(processScripts));
   gulp.watch('source/img/**/*.svg', gulp.series(createSvgStack));
-  gulp.watch('source/*.html', gulp.series(html, serverReload));
+  gulp.watch('source/*.html', gulp.series(processMarkup, serverReload));
 }
 
 // Npm run build
 
-export const build = gulp.series(
-  clean,
-  copy,
-  optimizeImages,
-  gulp.parallel(
-    html,
-    styles,
-    scripts,
-    createWebp,
-    optimizeSvg,
-    createSvgStack
-));
-
-// Npm run deploy
-
-export const deploy = () => {
-  return gulp.src('build/**/*')
-    .pipe(ghpages());
-};
+export const build = (done) => {
+  isDevelopment = false;
+  gulp.series(
+    removeBuild,
+    compileProject
+  )(done);
+}
 
 // Npm run start
 
 export default gulp.series(
-  clean,
-  copy,
-  copyImages,
-  gulp.parallel(
-    html,
-    styles,
-    scripts,
-    createWebp,
-    optimizeSvg,
-    createSvgStack
-  ),
-  gulp.series(
-    server,
-    watcher
-));
+  removeBuild,
+  compileProject,
+  server,
+  watcher
+);
