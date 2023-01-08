@@ -42,8 +42,44 @@
   }
 }
 
+.video-presentation__main {
+  position: relative;
+}
+
 .video-presentation__video {
   display: block;
   width: auto;
   margin: 0 auto;
+}
+
+.video-presentation__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 54px;
+  border: none;
+  background: $background-primary;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:disabled {
+    opacity: 0.1;
+    pointer-events: none;
+  }
 }

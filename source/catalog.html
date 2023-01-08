@@ -168,17 +168,22 @@
           <h2 class="video-presentation__title heading">Все еще сомневаетесь?</h2>
           <p>Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
         </header>
-        <picture>
-          <source type="image/avif" media="(min-width: 769px)" srcset="img/video-presentation--desktop.avif 1x, img/video-presentation--desktop@2x.avif 2x">
-          <source type="image/avif" media="(min-width: 321px)" srcset="img/video-presentation--tablet.avif 1x, img/video-presentation--tablet@2x.avif 2x">
-          <source type="image/avif" srcset="img/video-presentation--mobile.avif 1x, img/video-presentation--mobile@2x.avif 2x">
-          <source type="image/webp" media="(min-width: 769px)" srcset="img/video-presentation--desktop.webp 1x, img/video-presentation--desktop@2x.webp 2x">
-          <source type="image/webp" media="(min-width: 321px)" srcset="img/video-presentation--tablet.webp 1x, img/video-presentation--tablet@2x.webp 2x">
-          <source type="image/webp" srcset="img/video-presentation--mobile.webp 1x, img/video-presentation--mobile@2x.webp 2x">
-          <source media="(min-width: 769px)" srcset="img/video-presentation--desktop.jpg 1x, img/video-presentation--desktop@2x.jpg 2x">
-          <source media="(min-width: 321px)" srcset="img/video-presentation--tablet.jpg 1x, img/video-presentation--tablet@2x.jpg 2x">
-          <img class="video-presentation__video" src="img/video-presentation--mobile.jpg" srcset="img/video-presentation--mobile.jpg 1x, img/video-presentation--mobile@2x.jpg 2x" width="280" height="177" alt="Видеопрезентация отдыха в Седоне." loading="lazy">
-        </picture>
+        <div class="video-presentation__main">
+          <picture>
+            <source type="image/avif" media="(min-width: 769px)" srcset="img/video-presentation--desktop.avif 1x, img/video-presentation--desktop@2x.avif 2x">
+            <source type="image/avif" media="(min-width: 321px)" srcset="img/video-presentation--tablet.avif 1x, img/video-presentation--tablet@2x.avif 2x">
+            <source type="image/avif" srcset="img/video-presentation--mobile.avif 1x, img/video-presentation--mobile@2x.avif 2x">
+            <source type="image/webp" media="(min-width: 769px)" srcset="img/video-presentation--desktop.webp 1x, img/video-presentation--desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 321px)" srcset="img/video-presentation--tablet.webp 1x, img/video-presentation--tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/video-presentation--mobile.webp 1x, img/video-presentation--mobile@2x.webp 2x">
+            <source media="(min-width: 769px)" srcset="img/video-presentation--desktop.jpg 1x, img/video-presentation--desktop@2x.jpg 2x">
+            <source media="(min-width: 321px)" srcset="img/video-presentation--tablet.jpg 1x, img/video-presentation--tablet@2x.jpg 2x">
+            <img class="video-presentation__video" src="img/video-presentation--mobile.jpg" srcset="img/video-presentation--mobile.jpg 1x, img/video-presentation--mobile@2x.jpg 2x" width="280" height="177" alt="Видеопрезентация отдыха в Седоне." loading="lazy">
+          </picture>
+          <button class="video-presentation__button" type="button">
+            <span class="visually-hidden">Начать просмотр.</span>
+          </button>
+        </div>
       </section>
     </main>
     <footer class="footer">
