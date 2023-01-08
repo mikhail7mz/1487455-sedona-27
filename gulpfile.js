@@ -63,6 +63,14 @@ const createWebp = () => {
     .pipe(gulp.dest('build/img'));
 }
 
+const createAvif = () => {
+  return gulp.src('source/img/**/*.{jpg,png}')
+    .pipe(squoosh({
+      avif: {}
+    }))
+    .pipe(gulp.dest('build/img'));
+}
+
 // SVG
 
 const optimizeSvg = () => {
@@ -108,6 +116,7 @@ const compileProject = (done) => {
     processImages,
     processScripts,
     createWebp,
+    createAvif,
     optimizeSvg,
     createSvgStack
   )(done);

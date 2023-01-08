@@ -3,6 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      function addClass(className) {
+        document.documentElement.classList.add(className);
+      }
+      var avif = new Image();
+      avif.src = "data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgANogQEAwgMg8f8D///8WfhwB8+ErK42A=";
+      avif.onload = function () {
+        addClass("avif");
+      };
+      avif.onerror = function () {
+        check_webp_feature(function (isSupported) {
+          if (isSupported) {
+            return addClass("webp");
+          }
+          return addClass("fallback");
+        });
+      };
+      function check_webp_feature(callback) {
+        var img = new Image();
+        img.onload = function () {
+          var result = img.width > 0 && img.height > 0;
+          callback(result);
+        };
+        img.onerror = function () {
+          callback(false);
+        };
+        img.src = "data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==";
+      }
+    </script>
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/180.png">
@@ -54,6 +83,9 @@
         <ul class="gallery__list">
           <li class="gallery__item gallery__item--wide">
             <picture>
+              <source type="image/avif" media="(min-width: 769px)" srcset="img/gallery/nature--desktop.avif 1x, img/gallery/nature--desktop@2x.avif 2x">
+              <source type="image/avif" media="(min-width: 321px)" srcset="img/gallery/nature--tablet.avif 1x, img/gallery/nature--tablet@2x.avif 2x">
+              <source type="image/avif" srcset="img/gallery/nature--mobile.avif 1x, img/gallery/nature--mobile@2x.avif 2x">
               <source type="image/webp" media="(min-width: 769px)" srcset="img/gallery/nature--desktop.webp 1x, img/gallery/nature--desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 321px)" srcset="img/gallery/nature--tablet.webp 1x, img/gallery/nature--tablet@2x.webp 2x">
               <source type="image/webp" srcset="img/gallery/nature--mobile.webp 1x, img/gallery/nature--mobile@2x.webp 2x">
@@ -71,6 +103,9 @@
           </li>
           <li class="gallery__item">
             <picture>
+              <source type="image/avif" media="(min-width: 769px)" srcset="img/gallery/plants--desktop.avif 1x, img/gallery/plants--desktop@2x.avif 2x">
+              <source type="image/avif" media="(min-width: 321px)" srcset="img/gallery/plants--tablet.avif 1x, img/gallery/plants--tablet@2x.avif 2x">
+              <source type="image/avif" srcset="img/gallery/plants--mobile.avif 1x, img/gallery/plants--mobile@2x.avif 2x">
               <source type="image/webp" media="(min-width: 769px)" srcset="img/gallery/plants--desktop.webp 1x, img/gallery/plants--desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 321px)" srcset="img/gallery/plants--tablet.webp 1x, img/gallery/plants--tablet@2x.webp 2x">
               <source type="image/webp" srcset="img/gallery/plants--mobile.webp 1x, img/gallery/plants--mobile@2x.webp 2x">
@@ -88,6 +123,9 @@
           </li>
           <li class="gallery__item">
             <picture>
+              <source type="image/avif" media="(min-width: 769px)" srcset="img/gallery/north-way--desktop.avif 1x, img/gallery/north-way--desktop@2x.avif 2x">
+              <source type="image/avif" media="(min-width: 321px)" srcset="img/gallery/north-way--tablet.avif 1x, img/gallery/north-way--tablet@2x.avif 2x">
+              <source type="image/avif" srcset="img/gallery/north-way--mobile.avif 1x, img/gallery/north-way--mobile@2x.avif 2x">
               <source type="image/webp" media="(min-width: 769px)" srcset="img/gallery/north-way--desktop.webp 1x, img/gallery/north-way--desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 321px)" srcset="img/gallery/north-way--tablet.webp 1x, img/gallery/north-way--tablet@2x.webp 2x">
               <source type="image/webp" srcset="img/gallery/north-way--mobile.webp 1x, img/gallery/north-way--mobile@2x.webp 2x">
@@ -105,6 +143,9 @@
           </li>
           <li class="gallery__item">
             <picture>
+              <source type="image/avif" media="(min-width: 769px)" srcset="img/gallery/bridge--desktop.avif 1x, img/gallery/bridge--desktop@2x.avif 2x">
+              <source type="image/avif" media="(min-width: 321px)" srcset="img/gallery/bridge--tablet.avif 1x, img/gallery/bridge--tablet@2x.avif 2x">
+              <source type="image/avif" srcset="img/gallery/bridge--mobile.avif 1x, img/gallery/bridge--mobile@2x.avif 2x">
               <source type="image/webp" media="(min-width: 769px)" srcset="img/gallery/bridge--desktop.webp 1x, img/gallery/bridge--desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 321px)" srcset="img/gallery/bridge--tablet.webp 1x, img/gallery/bridge--tablet@2x.webp 2x">
               <source type="image/webp" srcset="img/gallery/bridge--mobile.webp 1x, img/gallery/bridge--mobile@2x.webp 2x">
@@ -128,6 +169,9 @@
           <p>Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
         </header>
         <picture>
+          <source type="image/avif" media="(min-width: 769px)" srcset="img/video-presentation--desktop.avif 1x, img/video-presentation--desktop@2x.avif 2x">
+          <source type="image/avif" media="(min-width: 321px)" srcset="img/video-presentation--tablet.avif 1x, img/video-presentation--tablet@2x.avif 2x">
+          <source type="image/avif" srcset="img/video-presentation--mobile.avif 1x, img/video-presentation--mobile@2x.avif 2x">
           <source type="image/webp" media="(min-width: 769px)" srcset="img/video-presentation--desktop.webp 1x, img/video-presentation--desktop@2x.webp 2x">
           <source type="image/webp" media="(min-width: 321px)" srcset="img/video-presentation--tablet.webp 1x, img/video-presentation--tablet@2x.webp 2x">
           <source type="image/webp" srcset="img/video-presentation--mobile.webp 1x, img/video-presentation--mobile@2x.webp 2x">
