@@ -1,0 +1,39 @@
+@use "../global/variables" as *;
+
+@mixin background-images ($path) {
+  @include background-image-adaptive ("#{$path}--mobile");
+
+  @media (min-resolution: 2dppx) {
+    @include background-image-adaptive ("#{$path}--mobile@2x");
+  }
+
+  @media (min-width: ($mobile-width + 1)) {
+    @include background-image-adaptive ("#{$path}--tablet");
+  }
+
+  @media (min-resolution: 2dppx) and (min-width: ($mobile-width + 1)) {
+    @include background-image-adaptive ("#{$path}--tablet@2x");
+  }
+
+  @media (min-width: ($tablet-width + 1)) {
+    @include background-image-adaptive ("#{$path}--desktop");
+  }
+
+  @media (min-resolution: 2dppx) and (min-width: ($tablet-width + 1)) {
+    @include background-image-adaptive ("#{$path}--desktop@2x");
+  }
+}
+
+@mixin background-image-adaptive ($path) {
+  .fallback & {
+    background-image: url("#{$path}.jpg");
+  }
+
+  .webp & {
+    background-image: url("#{$path}.webp");
+  }
+
+  .avif & {
+    background-image: url("#{$path}.avif");
+  }
+}
