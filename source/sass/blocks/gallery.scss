@@ -74,9 +74,35 @@
   padding: 25px 0;
   border-top: 1px solid #e5e5e5;
 
+  &:focus-within,
+  &:hover {
+    z-index: 1;
+  }
+
   @media (min-width: $tablet-width) {
     border: 0;
     padding: 0;
+  }
+}
+
+.gallery__link {
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 2px $background-primary,
+      0 0 2px 4px $background-secondary;
+  }
+
+  &:hover {
+    box-shadow: none;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: none;
+    opacity: 0.4;
   }
 }
 
